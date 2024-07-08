@@ -1,5 +1,5 @@
 
-export const pageName = "Autopartes BBC";
+export const pageName = "AutopartesBBC";
 export const primaryColor = "#000000";
 export const backgroundColor = "#FFFFFF";
 export const makeClearBackground = (color) => {
