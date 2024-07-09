@@ -27,44 +27,44 @@ export default function Home() {
     >
       <Navbar />
       <Hero
-        contentThirdSection={
-          <Typography.Title className=" drop-shadow-sm text-yellow-300">
-            The best services for you
-          </Typography.Title>
-        }
         variant="background-img"
         src={dataSite.image_hero}
         withSubView
         title={dataSite.subtitle}
         description={dataSite.description}
         srcSecondary={dataSite.image_hero2}
-        colorText={primaryColor}
+        colorText={"#fff"}
+        classNamePrincipalText="text-left "
+        withShadowText
+        styleSecondSection={{
+          backgroundColor: primaryColor,
+        }}
+        isFixed
+        contentThirdSection={
+          <div className="flex flex-col px-24" id="mission">
+            <Typography.Title
+              level={3}
+              className="text-white font-medium mb-10 text-center"
+              style={{
+                zIndex: 1,
+              }}
+            >
+              Nosotros
+            </Typography.Title>
+            <Missions
+              data={dataSite.info}
+              gridColumns={3}
+              backgroundColor={primaryColor}
+              borderRadius={10}
+              variant="text"
+              textColor="#fff"
+            />
+          </div>}
+
       />
       <div className="container mx-auto flex flex-col gap-20 my-24">
-        <div className="flex flex-col">
-          <Typography.Title
-            level={3}
-            className="font-medium mb-10 text-center"
-          >
-            Features
-          </Typography.Title>
-          <ListFeatures
-            stylesContainer={{
-              borderColor: { primaryColor },
-              borderWidth: 2,
-              padding: 10,
-              borderRadius: 10,
-            }}
-            src={dataSite.image_hero2}
-            features={dataSite.services.map((feature) => ({
-              icon: <MdOutlineArchitecture />,
-              title: feature.title,
 
-              color: { primaryColor },
-            }))}
-          />
-        </div>
-        <div id="products">
+        <div id="products" className="px-28" >
           {dataSite.products.length > 1 && (
             <ProductSection
               withTitles={false}
@@ -72,17 +72,24 @@ export default function Home() {
               variant="grid"
               productItemVariant="horizontal"
               onClickImage={(id) => {
-                router.push(`/product/${id}`);
+                router.push(`/more-information`);
               }}
               stylesItem={{
-                backgroundColor: { primaryColor },
+                backgroundColor: primaryColor,
                 borderRadius: 10,
               }}
-              productVersion="2"
+
+              title="Nuestros Productos"
+              withPrice={false}
+              productVersion="4"
               carouselOptions={{
                 backgroundColor: "transparent",
                 arrowColor: "blue"
               }}
+              buttonAdd={{
+                className: "hidden"
+              }}
+
             />
           )}
         </div>
@@ -104,28 +111,14 @@ export default function Home() {
             version="v2"
           />
         </div>
-        <div className="flex flex-col" id="our-services">
-          <Typography.Title
-            level={3}
-            className="text-white font-medium mb-10 text-center"
-          >
-            Know Us
-          </Typography.Title>
-          <Missions
-            data={dataSite.info}
-            gridColumns={3}
-            backgroundColor={primaryColor}
-            borderRadius={10}
-            variant="text"
-          />
-        </div>
+
 
         <div className="flex flex-col" id="references">
           <Typography.Title
             level={3}
             className="font-medium mb-10 text-center"
           >
-            References
+            Referencias
           </Typography.Title>
           <References
             carouselOptions={{
@@ -134,14 +127,14 @@ export default function Home() {
               autoPlay: false,
               direction: "horizontal",
             }}
-            variantItem="text"
+            variantItem="card"
             variant="carousel"
-            backgroundColor={primaryColor}
+            // backgroundColor={primaryColor}
             borderRadius={10}
             references={dataSite.references}
             gridColumns={3}
             titleAlign="center"
-          />
+            textColor={primaryColor} />
         </div>
 
       </div>

@@ -1,7 +1,7 @@
 
 export const pageName = "AutopartesBBC";
-export const primaryColor = "#000000";
-export const backgroundColor = "#FFFFFF";
+export const primaryColor = "#BD5050";
+export const backgroundColor = "#F5F5F5";
 export const makeClearBackground = (color) => {
   return {
     backgroundColor: color,
@@ -12,18 +12,19 @@ export const makeClearBackground = (color) => {
 
 export const navData = [
   {
-    href: '/#products',
-    label: "Let's start!",
+    href: '/#mission',
+    label: 'Nosotros',
   },
   {
-    href: '/#our-services',
-    label: 'Our Services',
+    href: '/#products',
+    label: 'Nuestros Productos',
   },
   {
     href: '/#references',
-    label: 'References',
+    label: 'Referencias',
   },
 ];
+
 
 export const footerData = [
   {
