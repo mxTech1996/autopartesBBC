@@ -33,7 +33,7 @@ const Navbar = () => {
           className: "w-20",
         }}
         links={navData}
-        showButtonCart={false}
+        showButtonCart={true}
         onRedirect={(path) => {
           router.push(path);
         }
